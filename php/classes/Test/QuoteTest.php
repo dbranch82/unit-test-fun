@@ -209,7 +209,7 @@ class QuoteTest extends QuoteTestSetup {
 		$pdoQuote = Quote::getQuoteByAuthor($this->getPDO(), $quote->getQuoteAuthor());
 		$this->assertEquals($numRows + 1, $this->getConnection()->getRowCount("quote"));
 
-		$this->assertEquals($pdoQuote->getQuoteId(), $quote->getQuoteId());
+		$this->assertEquals($pdoQuote->getQuoteId(), $this->quote->getQuoteId());
 		$this->assertEquals($pdoQuote->getQuote(), $quote->getQuote());
 		$this->assertEquals($pdoQuote->getQuoteAuthor(), $quote->getQuoteAuthor());
 		$this->assertEquals($pdoQuote->getQuotePoster(), $quote->getQuotePoster());
