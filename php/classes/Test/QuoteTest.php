@@ -206,7 +206,7 @@ class QuoteTest extends QuoteTestSetup {
 		$quote->insert($this->getPDO());
 
 		//grab the quote from the database.
-		$pdoQuote = Quote::getQuoteByQuoteId($this->getPDO(), $quote->getQuoteAuthor());
+		$pdoQuote = Quote::getQuoteByAuthor($this->getPDO(), $quote->getQuoteAuthor());
 		$this->assertEquals($numRows + 1, $this->getConnection()->getRowCount("quote"));
 
 		$this->assertEquals($pdoQuote->getQuoteId(), $quote->getQuoteId());
