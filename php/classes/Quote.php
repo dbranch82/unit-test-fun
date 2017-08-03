@@ -63,7 +63,7 @@ class Quote implements \JsonSerializable {
 	public function __construct(?int $newQuoteId, string $newQuote, string $newQuoteAuthor, string $newQuotePoster, int $newQuoteRating) {
 		try {
 			$this->setQuoteId($newQuoteId);
-			$this->setquote($newQuote);
+			$this->setQuote($newQuote);
 			$this->setQuoteAuthor($newQuoteAuthor);
 			$this->setQuotePoster($newQuotePoster);
 			$this->setQuoteRating($newQuoteRating);
@@ -127,7 +127,7 @@ class Quote implements \JsonSerializable {
 		if(empty($newQuote) === true) {
 			throw (new \InvalidArgumentException("quote is empty or insecure"));
 		}
-		if(strlen($newQuote) < 256) {
+		if(strlen($newQuote) < 223) {
 			throw(new \RangeException("quote is too long"));
 		}
 		$this->quote = $newQuote;
