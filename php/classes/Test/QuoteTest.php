@@ -200,7 +200,7 @@ class QuoteTest extends QuoteTestSetup {
 
 		$numRows = $this->getConnection()->getRowCount("quote");
 		//create a quote object and insert it into the database
-		$quote = new Quote(null, $this->$quote->getQuoteId(),
+		$quote = new QuoteId(null, $this->$quote->getQuoteId(),
 			$this->VALID_QUOTE_ID,$this->VALID_GREAT_QUOTE, $this->VALID_QUOTE_AUTHOR, $this->VALID_QUOTE_POSTER, $this->VALID_QUOTE_RATING);
 
 		//insert the quote into the database
